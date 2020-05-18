@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.route("/:id").get(async (_, response) => {
   const itemName = encodeURIComponent(_.params.id);
-  const itemData = await axios.get(`https://steamcommunity.com/market/listings/730/${itemName}`);
+  const itemData = await axios.get(`https://steamcommunity.com/market/listings/730/${itemName}?key=756645EFF7F49FC05AFA9AE79B83B98C`);
 
   const lines = itemData.data.split("\n");
   for (const key of lines) {
@@ -19,7 +19,6 @@ router.route("/:id").get(async (_, response) => {
           .slice(0, -1)
       );
 
-      console.log(itemsData);
       const items = Object.keys(itemsData).map(element => ({
         price: itemsData[element].price,
         itemId: element,
@@ -41,3 +40,4 @@ router.route("/").post(bodyParser.json(), async (request, response) => {
 });
 
 export default router;
+

@@ -10,7 +10,6 @@ const ItemDetail = ({ img, id, type }: { img: string; id: string; type: string }
   const [itemData, setItemData] = useState<Partial<IItemData>>({});
   useEffect(() => {
     axios.get(`/api/getItemData/${id}`).then(res => {
-      console.log(res.data);
       setItemData(res.data);
     });
   }, [id]);
@@ -44,7 +43,6 @@ const ItemListElement: React.SFC<IItemsData> = ({ assetId, itemId, url, price })
   useEffect(() => {
     const floatUrl: string = `/api/getItemData/floatValue/?m=${itemId}&a=${assetId}&d=${url}`;
     axios.get(floatUrl).then(res => {
-      console.log(res.data);
       setFloatValue(res.data.iteminfo.floatvalue);
     });
   }, [assetId, itemId, url]);
@@ -55,19 +53,34 @@ const ItemListElement: React.SFC<IItemsData> = ({ assetId, itemId, url, price })
   );
 };
 
-const ItemList: React.SFC<IItemDetail> = ({ id, img, name, type }) => {
+const ItemList: React.SFC<IItemDetail & { appendProducts: any }> = ({ id, img, name, type, appendProducts }) => {
   const [itemsData, setItemsData] = useState<IItemsData[]>([]);
 
   useEffect(() => {
     axios.get(`/api/getItemsData/${name}`).then(res => {
       console.log(res.data);
       setItemsData(res.data);
+      appendProducts({
+        [id]: { id, img, name, type },
+      });
+      const products: any = res.data;
+      // products &&
+      //   products.array &&
+      //   products.array.forEach((element: any) => {
+      //     const floatUrl: string = `/api/getItemData/floatValue/?m=${element.itemId}&a=${element.assetId}&d=${element.url}`;
+      //     axios.get(floatUrl).then(res => {
+      //       appendProducts({
+      //         id: { id, img, name, type, floatValue: res.data.iteminfo.floatvalue },
+      //       });
+      //     });
+      //   });
     });
-  }, [name]);
+  }, [appendProducts, id, img, name, type]);
 
   return (
     <div className="w-100 flex flex-column">
       <div className="w-100 bg-muted-2 flex">
+        \ s
         <ItemDetail img={img} id={id} type={type} />
       </div>
       {/* {itemsData.map((element: IItemsData) => (

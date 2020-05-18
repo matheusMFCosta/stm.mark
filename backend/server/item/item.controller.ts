@@ -12,15 +12,11 @@ router.route("/floatValue").get(async (_, response) => {
 });
 
 router.route("/:id").get(async (_, response) => {
-  const itemId = encodeURIComponent(_.params.id);
-  console.log(
-    `https://steamcommunity.com/market/itemordershistogram?country=BR&language=english&currency=1&item_nameid=${itemId}&two_factor=0`
-  );
-  const itemData = await axios.get(
-    `https://steamcommunity.com/market/itemordershistogram?country=BR&language=english&currency=1&item_nameid=${itemId}&two_factor=0`
-  );
-
-  return response.status(200).send(itemData.data);
+  // const itemId = encodeURIComponent(_.params.id);
+  // const itemData = await axios.get(
+  //   `https://steamcommunity.com/market/itemordershistogram?country=BR&language=english&currency=7&item_nameid=${itemId}&two_factor=0`
+  // );
+  // return response.status(200).send(itemData.data);
 });
 
 router.route("/").post(bodyParser.json(), async (request, response) => {

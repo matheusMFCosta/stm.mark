@@ -11,6 +11,8 @@ fs.readdirSync("node_modules")
     nodeModules[mod] = "commonjs " + mod;
   });
 
+console.log("----adasdasdasdasd", process.env.NODE_ENV);
+
 module.exports = {
   entry: "./server/server.ts",
   output: {
@@ -31,4 +33,10 @@ module.exports = {
   target: "node",
   externals: nodeModules,
   plugins: [new NodemonPlugin()],
+  devServer: {
+    disableHostCheck: true,
+    DANGEROUSLY_DISABLE_HOST_CHECK: true,
+    host: "0.0.0.0",
+    allowedHosts: ["steamcommunity.com"],
+  },
 };

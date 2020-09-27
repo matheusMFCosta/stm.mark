@@ -11,15 +11,14 @@ const ProductContext = React.createContext({});
 const ItemsContainer = () => {
   const [products, setProducts] = useState({});
 
-  const appendProducts = (value: {}) => {
-    setProducts({ ...products, ...value });
+  const appendProducts = (value: any[]) => {
+    console.log(value);
+    if (!!value) setProducts({ ...products, ...value });
   };
-
-  console.log(`products`, products);
-
   return (
     <ProductContext.Provider value={products}>
       <div className="flex">
+        ddddd
         <div className="w-50">
           {Box1.resources.map(element => (
             <div key={element.id}>

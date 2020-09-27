@@ -6,33 +6,25 @@ import { authorize } from "../config";
 const router = express.Router();
 
 router.route("/:id").get(async (_, response) => {
-  const itemName = encodeURIComponent(_.params.id);
-  const itemData = await axios.get(`https://steamcommunity.com/market/listings/730/${itemName}?key=756645EFF7F49FC05AFA9AE79B83B98C`);
+  try {
+    const itemId = encodeURIComponent(_.params.id);
 
-  const lines = itemData.data.split("\n");
-  for (const key of lines) {
-    if (key.includes("var g_rgListingInfo")) {
-      const itemsData = JSON.parse(
-        key
-          .split(" = ")[1]
-          .trim()
-          .slice(0, -1)
-      );
+    const axiosResponse = await axios.get(
+      `https://steamcommunity.com/market/itemordershistogram?country=BR&language=brazilian&currency=1&item_nameid=${itemId}&two_factor=0`
+    );
+    const items = axiosResponse.data;
 
-      const items = Object.keys(itemsData).map(element => ({
-        price: itemsData[element].price,
-        itemId: element,
-        assetId: itemsData[element].asset.id,
-        url: itemsData[element].asset.market_actions[0].link.split("%D")[1],
-      }));
+    response.status(200).send({
+      price: items.highest_buy_order,
+      itemId: _.params.id,
+      assetId: 0,
+      url: 0,
+    });
 
-      response.status(200).send(items);
-
-      return;
-    }
+    return;
+  } catch (e) {
+    response.status(500).send({});
   }
-
-  return response.status(200).send(itemData.data);
 });
 
 router.route("/").post(bodyParser.json(), async (request, response) => {
@@ -40,4 +32,3 @@ router.route("/").post(bodyParser.json(), async (request, response) => {
 });
 
 export default router;
-

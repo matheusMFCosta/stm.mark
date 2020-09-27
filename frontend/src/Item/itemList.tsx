@@ -56,31 +56,32 @@ const ItemListElement: React.SFC<IItemsData> = ({ assetId, itemId, url, price })
 const ItemList: React.SFC<IItemDetail & { appendProducts: any }> = ({ id, img, name, type, appendProducts }) => {
   const [itemsData, setItemsData] = useState<IItemsData[]>([]);
 
-  useEffect(() => {
-    axios.get(`/api/getItemsData/${name}`).then(res => {
+  const wow = async () => {
+    console.log(appendProducts, id, img, name, type);
+    axios.get(`/api/getItemsData/${id}`).then(res => {
       console.log(res.data);
       setItemsData(res.data);
       appendProducts({
         [id]: { id, img, name, type },
       });
       const products: any = res.data;
-      // products &&
-      //   products.array &&
-      //   products.array.forEach((element: any) => {
-      //     const floatUrl: string = `/api/getItemData/floatValue/?m=${element.itemId}&a=${element.assetId}&d=${element.url}`;
-      //     axios.get(floatUrl).then(res => {
-      //       appendProducts({
-      //         id: { id, img, name, type, floatValue: res.data.iteminfo.floatvalue },
-      //       });
-      //     });
-      //   });
+      const floatUrl: string = `/api/getItemData/floatValue/?m=${products.itemId}&a=${products.assetId}&d=${products.url}`;
+      axios.get(floatUrl).then(res => {
+        console.log(res);
+        appendProducts({
+          id: { id, img, name, type, floatValue: res.data.iteminfo.floatvalue },
+        });
+      });
     });
-  }, [appendProducts, id, img, name, type]);
+  };
+  useEffect(() => {
+    wow();
+  }, []);
+  // }, [appendProducts, id, img, name, type]);
 
   return (
     <div className="w-100 flex flex-column">
       <div className="w-100 bg-muted-2 flex">
-        \ s
         <ItemDetail img={img} id={id} type={type} />
       </div>
       {/* {itemsData.map((element: IItemsData) => (

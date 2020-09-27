@@ -25,6 +25,7 @@ export interface IBox {
   resources: IItemDetail[];
   results: IItemDetail[];
 }
+
 export const Box1: IBox = {
   resources: [
     {
@@ -34,41 +35,41 @@ export const Box1: IBox = {
       img:
         "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhnwMzFcDoV08yklYWfmOX9MrXummJW4NFOhujT8om73QGw8kU6MT3wJIWUdw8_YAnS-Vi5lLjmgJa0tJqcwSQ36yQhtHyIzAv330_ZgbOSgA/360fx360f",
     },
-    {
-      type: "minimal Wear",
-      id: "139654816",
-      name: "StatTrak™%20MP7%20%7C%20Impire%20%28Minimal%20Wear%29",
-      img:
-        "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFBRw7P7YJgJL4cy_hoW0m_7zO6_ummpD78A_i-zEod-kile3-UJtZz-hd4_Dd1VoZV6Dq1i5wuu8jZDo6M_NzHIx6z5iuyjkfvt3Uw/360fx360f",
-    },
-    {
-      type: "minimal Wear",
-      id: "139673157",
-      name: "StatTrak™%20Five-SeveN%20%7C%20Triumvirate%20%28Minimal%20Wear%29",
-      img:
-        "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTQg2xc7ctlj-3--YXygECLpxIuNDztcdSSew47ZgqD-AS6k-bv05Lp6MvPyCNj6SVz4n2LzUTiiRgabbRtheveFwsXZP-DHw/360fx360f",
-    },
-    {
-      type: "Factory New",
-      id: "139654857",
-      name: "StatTrak™%20MP7%20%7C%20Impire%20%28Factory%20New%29",
-      img:
-        "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFBRw7P7YJgJL4cy_hoW0m_7zO6_ummpD78A_i-zEod-kile3-UJtZz-hd4_Dd1VoZV6Dq1i5wuu8jZDo6M_NzHIx6z5iuyjkfvt3Uw/360fx360f",
-    },
-    {
-      type: "Factory New",
-      id: "139673197",
-      name: "StatTrak™%20Five-SeveN%20%7C%20Triumvirate%20%28Factory%20New%29",
-      img:
-        "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTQg2xc7ctlj-3--YXygECLpxIuNDztcdSSew47ZgqD-AS6k-bv05Lp6MvPyCNj6SVz4n2LzUTiiRgabbRtheveFwsXZP-DHw/360fx360f",
-    },
-    {
-      type: "Factory New",
-      id: "139654774",
-      name: "StatTrak™%20MAG-7%20%7C%20Praetorian%20%28Factory%20New%29",
-      img:
-        "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhnwMzFcDoV08yklYWfmOX9MrXummJW4NFOhujT8om73QGw8kU6MT3wJIWUdw8_YAnS-Vi5lLjmgJa0tJqcwSQ36yQhtHyIzAv330_ZgbOSgA/360fx360f",
-    },
+    // {
+    //   type: "minimal Wear",
+    //   id: "139654816",
+    //   name: "StatTrak™%20MP7%20%7C%20Impire%20%28Minimal%20Wear%29",
+    //   img:
+    //     "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFBRw7P7YJgJL4cy_hoW0m_7zO6_ummpD78A_i-zEod-kile3-UJtZz-hd4_Dd1VoZV6Dq1i5wuu8jZDo6M_NzHIx6z5iuyjkfvt3Uw/360fx360f",
+    // },
+    // {
+    //   type: "minimal Wear",
+    //   id: "139673157",
+    //   name: "StatTrak™%20Five-SeveN%20%7C%20Triumvirate%20%28Minimal%20Wear%29",
+    //   img:
+    //     "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTQg2xc7ctlj-3--YXygECLpxIuNDztcdSSew47ZgqD-AS6k-bv05Lp6MvPyCNj6SVz4n2LzUTiiRgabbRtheveFwsXZP-DHw/360fx360f",
+    // },
+    // {
+    //   type: "Factory New",
+    //   id: "139654857",
+    //   name: "StatTrak™%20MP7%20%7C%20Impire%20%28Factory%20New%29",
+    //   img:
+    //     "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFBRw7P7YJgJL4cy_hoW0m_7zO6_ummpD78A_i-zEod-kile3-UJtZz-hd4_Dd1VoZV6Dq1i5wuu8jZDo6M_NzHIx6z5iuyjkfvt3Uw/360fx360f",
+    // },
+    // {
+    //   type: "Factory New",
+    //   id: "139673197",
+    //   name: "StatTrak™%20Five-SeveN%20%7C%20Triumvirate%20%28Factory%20New%29",
+    //   img:
+    //     "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTQg2xc7ctlj-3--YXygECLpxIuNDztcdSSew47ZgqD-AS6k-bv05Lp6MvPyCNj6SVz4n2LzUTiiRgabbRtheveFwsXZP-DHw/360fx360f",
+    // },
+    // {
+    //   type: "Factory New",
+    //   id: "139654774",
+    //   name: "StatTrak™%20MAG-7%20%7C%20Praetorian%20%28Factory%20New%29",
+    //   img:
+    //     "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhnwMzFcDoV08yklYWfmOX9MrXummJW4NFOhujT8om73QGw8kU6MT3wJIWUdw8_YAnS-Vi5lLjmgJa0tJqcwSQ36yQhtHyIzAv330_ZgbOSgA/360fx360f",
+    // },
   ],
   results: [
     {

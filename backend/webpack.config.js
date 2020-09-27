@@ -33,10 +33,10 @@ module.exports = {
   target: "node",
   externals: nodeModules,
   plugins: [new NodemonPlugin()],
-  devServer: {
-    disableHostCheck: true,
-    DANGEROUSLY_DISABLE_HOST_CHECK: true,
-    host: "0.0.0.0",
-    allowedHosts: ["steamcommunity.com"],
-  },
+  // devServer: {
+  //   disableHostCheck: true,
+  //   DANGEROUSLY_DISABLE_HOST_CHECK: true,
+  //   host: "0.0.0.0",
+  //   allowedHosts: ["steamcommunity.com"],
+  // },
 };
